@@ -5,11 +5,24 @@ function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  // SUBMIT
   function doSubmit(e) {
     e.preventDefault();
 
-    console.log("Email: ", email)
-    console.log("Password: ", password)
+    const credentials = {
+      email, password,
+      isAuth: false
+    }
+    const credentialsString = JSON.stringify(credentials)
+    localStorage.setItem("credentials", credentialsString)
+
+    checkIsAuth()
+  }
+
+  function checkIsAuth() {
+    const userRaw = localStorage.getItem("credentials")
+    const userParsed = JSON.parse(userRaw)
+    console.log(userParsed)
   }
   return (
     <div>

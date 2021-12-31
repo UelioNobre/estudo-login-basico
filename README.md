@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# Criando um projeto básico de Login e senha com React
+
+O que aprendi:
+
+- A importancia de exportar os componentes.
+- Usar funções ao invés de classe deixa o código muito mais limpo.
+- Eventos `onClick`, `onChange` e `onSubmit` em formulários.
+- Roteamento
+  A nova lib `react-router-dom` não tem mais o componente `<Switch></Switch>`. Ao invés da anterior `Switch`, Deve-se usar `<Routes />`
+
+  ```
+  import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+  // [...]
+
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home />}>
+      <Route path='*' element={<NotFound />}>
+    </Routes>
+  </BrowserRouter>
+
+  // ...
+
+  ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
